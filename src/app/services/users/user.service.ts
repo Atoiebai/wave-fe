@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
+export const usersURL = "http://localhost:8080/api/blog/users"
 
 export interface User {
   id: number
@@ -13,11 +14,12 @@ export interface User {
   lastName: string
   password: string
 }
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private url: string = "http://localhost:8080/api/blog/users"
+  private url: string = usersURL
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<User[]> {

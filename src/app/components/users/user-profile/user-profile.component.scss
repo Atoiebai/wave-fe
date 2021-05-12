@@ -1,0 +1,99 @@
+.userbox {
+  display: inline-block;
+  border: 1px solid #5f155f;
+  border-radius: 25%;
+  width: 200px;
+  height: 200px;
+  margin: 8px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  line-height: 1.6;
+  background: #13181c;
+  font-family: sans-serif;
+  padding-right: 15em;
+}
+
+.card {
+
+  color: white;
+  background-image: url(https://wallpapercave.com/wp/wp5485781.jpg);
+  background-size: cover;
+  padding: 8rem 0 0;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 500ms ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(
+      hsl(0 0% 0% / 0),
+      hsl(20 0% 0% / 0.3) 20%,
+      hsl(0 0% 0% / 1));
+  transform: translateY(60%);
+  transition: transform 500ms ease;
+}
+
+.card:hover .card-content {
+  transform: translateY(0);
+
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+}
+
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  bottom: -2px;
+  left: calc(var(--padding) * -1);
+  background-color: aqua;
+  width: calc(100% + var(--padding));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 800ms ease;
+
+
+}
+
+.card:hover .card-title::after {
+  transform: scaleX(1);
+}
+
+.card-body {
+  color: rgb(255 255 255/ 0.85);
+}
+
+.button {
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+  color: black;
+  background-color: darkslategray;
+  padding: 0.5em 1.25em;
+}
+
+.button:hover,
+.button:focus {
+  background-color: dimgrey;
+}
