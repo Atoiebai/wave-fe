@@ -5,20 +5,26 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { UserProfileComponent } from './components/users/user-profile/user-profile.component';
-import {FormsModule} from "@angular/forms";
-import { DisplayUsersComponent } from './components/users/display-users/display-users.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import {Router, RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
     AppComponent,
     UserProfileComponent,
-    DisplayUsersComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {path: 'login', component: LoginPageComponent},
+      {path: '', component: UserProfileComponent}
+    ]),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
