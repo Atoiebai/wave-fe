@@ -29,7 +29,7 @@ export class LoginPageComponent implements OnInit {
     if (value) {
       this.authService.login(value).subscribe(
         result => {
-          if (result) this.router.navigate(["/"]).then(() => console.log("true"))
+          if (result) this.router.navigate(["/"]).then(() => alert("login successfully"))
           else this.invalidLogin = true;
         }
       )

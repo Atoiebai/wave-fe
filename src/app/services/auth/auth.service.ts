@@ -16,8 +16,8 @@ export class AuthService {
     return this.http.post(URL, data).pipe(map(
       response => {
         let result = JSON.parse(JSON.stringify(response))
-        if (result && result.Authorization) {
-          localStorage.setItem("token", result.Authorization)
+        if (result && result.token) {
+          localStorage.setItem("token", result.token)
           return true
         } else return false
       }
