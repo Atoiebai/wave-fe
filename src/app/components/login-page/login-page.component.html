@@ -1,12 +1,62 @@
-<form [formGroup]="formGroup" #f="ngForm" (ngSubmit)="loginProcess(f.form.value)">
-  <label>
-    <div>Login:</div>
-    <input formControlName="username"/>
-  </label>
+<div class="container-login">
+  <div class="header-login">
+    <div class="header-login-box">
+      <span class="header-text-position">
+        <a href="#">&nbsp;<i class="fa fa-user-plus"></i>&nbsp;&nbsp;Register</a>
+      </span>
+      <a href="#"><i class="fa fa-question"></i>&nbsp;&nbsp;Forgot Password?</a>
+    </div>
+  </div>
+  <div class="login-box">
+    <div class="login">
+      <h1>Authentication</h1>
+      <form
+        [formGroup]="formGroup"
+        #f="ngForm"
+        (ngSubmit)="loginProcess(f.form.value)">
+        <div class="form-content">
+          <input formControlName="username"
+                 type="text"
+                 id="username"
+                 placeholder="Email"
+                 autocomplete="off">
+          <label for="username" class="login-input-icon">
+            <i class="fa fa-user"></i>
+          </label>
 
-  <label>
-    <div>Password:</div>
-    <input formControlName="password" type="password"/>
-  </label>
-  <button>Login</button>
-</form>
+
+          <input formControlName="password"
+                 type="password"
+                 class="user-password"
+                 id="password"
+                 placeholder="Password"
+                 autocomplete="off">
+          <label for="password" class="login-input-icon">
+            <i class="fa fa-lock"></i>
+          </label>
+          <div class="login-remember">
+            <label class="login-checkbox">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <span class="login-remember-text">
+          &nbsp;&nbsp;Remember
+        </span>
+          </div>
+          <button>Login</button>
+        </div>
+      </form>
+
+
+      <span class="login-separator"></span>
+      <div class="login-social-media">
+        <img src="https://i.imgur.com/VnezlZf.png" alt="Facebook" width="50px" height="50px">
+        <img src="https://i.imgur.com/yZteilF.png" alt="Linkedin" width="50px" height="50px">
+        <img src="https://i.imgur.com/WsrXQ6U.png" alt="Twitter" width="50px" height="50px">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
