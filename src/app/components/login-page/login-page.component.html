@@ -20,6 +20,7 @@
                  id="username"
                  placeholder="Email"
                  autocomplete="off">
+          <div *ngIf="username?.touched && username?.invalid">TEST VALIDATION</div>
           <label for="username" class="login-input-icon">
             <i class="fa fa-user"></i>
           </label>
@@ -31,9 +32,11 @@
                  id="password"
                  placeholder="Password"
                  autocomplete="off">
+          <div *ngIf="password?.touched && password?.invalid">TEST VALIDATION</div>
           <label for="password" class="login-input-icon">
             <i class="fa fa-lock"></i>
           </label>
+
           <div class="login-remember">
             <label class="login-checkbox">
               <input type="checkbox">
@@ -43,7 +46,9 @@
           &nbsp;&nbsp;Remember
         </span>
           </div>
-          <button>Login</button>
+            <button>Login</button>
+<!--            <h3>or</h3>-->
+<!--            <a>Sign up</a>-->
         </div>
       </form>
 

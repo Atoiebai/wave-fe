@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth/auth.service";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 
 @Component({
@@ -11,17 +11,33 @@ import {Router} from "@angular/router";
 export class LoginPageComponent implements OnInit {
 
   invalidLogin: boolean | undefined
-  formGroup: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
-  })
+  formGroup: FormGroup =
+    this.fb.group({
+      username: ['', Validators.required],
+      password: ['' , Validators.required]
+    });
 
-  constructor(private authService: AuthService, private router: Router) {
+
+  constructor(private authService: AuthService,
+              private router: Router ,
+              private fb: FormBuilder) {
 
   }
 
   ngOnInit(): void {
+    this.formGroup = this.fb.group({
+       username: ['', Validators.required],
+       password: ['' , Validators.required]
 
+     })
+  }
+
+  get username() {
+    return this.formGroup.get('username')
+  }
+
+  get password() {
+    return this.formGroup.get('password')
   }
 
   loginProcess(value: FormGroup) {

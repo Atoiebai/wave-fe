@@ -2,6 +2,13 @@
   display: flex;
   flex-flow: column;
 }
+.form-content>a {
+  align-self: center;
+  margin: 5px;
+}
+.form-content>h3 {
+  align-self: center;
+}
 
 .container-login {
   height: 100vh;
@@ -192,10 +199,9 @@ input[type="password"]:focus {
 
 .login-separator {
   width: 70%;
-  margin: auto;
   height: 2px;
   background: #633fb3;
-  margin-top: 25px;
+  margin: 25px auto auto;
 }
 
 @keyframes login-input-focus-initial {
